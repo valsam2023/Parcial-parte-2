@@ -1,0 +1,20 @@
+PROMPTS EVALUACION
+Valentina Samaniego 
+28/05/2025
+IA utilizada: Chatgpt
+Utilice los siguientes prompts en todo el proceso de desarrollo
+1.
+Estoy desarrollando una simulación de un torneo de tenis con 16 jugadores usando Java. Quiero modelar cada partido como una tarea que se ejecuta en paralelo, y necesito asegurar que todas las partidas de una ronda se ejecuten simultáneamente, pero que la siguiente ronda no comience hasta que todas hayan terminado. ¿Cómo puedo implementar esto correctamente usando ExecutorService, Callable, y Future para controlar ese flujo? 
+Sé que debo usar ExecutorService para lanzar los partidos en paralelo y que puedo usar Future para esperar los resultados. Pero no estoy seguro de cuál es la mejor forma para esperar a que todos los partidos de una ronda terminen antes de pasar a la siguiente. ¿Qué estructura debo usar para asegurar esa sincronización entre fases? Dame 3 alternativas
+
+2.
+Estoy usando Random para decidir el ganador de cada set, pero me gustaría tener una forma de controlar la simulación con una semilla fija para poder repetir el torneo con los mismos resultados en pruebas. ¿Cómo puedo adaptar la lógica de aleatoriedad para que sea configurable y reproducible sin afectar el diseño concurrente?
+
+3.
+Cada partido debe durar entre 1.5 y 2 segundos (simulados). Si ejecuto múltiples partidos en paralelo, quiero asegurarme de que el tiempo total de una ronda no sea mayor que el del partido más largo. ¿Cómo puedo implementar correctamente este control del tiempo simulado con Thread.sleep() y asegurar que no haya bloqueos o mal sincronización?
+
+4.
+Ya estoy usando Callable y ExecutorService para ejecutar cada partido en paralelo, pero al imprimir el resultado de cada partido, el orden de salida en consola se ve desorganizado. ¿Cómo puedo esperar los resultados de todos los Future y luego imprimirlos en orden claro y secuencial como:"Jugador X vs Jugador Y\nSet 1: ...\nGanador del partido..."?
+
+5.
+Estoy desarrollando un simulador de partidos en Java donde necesito ir armando una cadena de texto con varias líneas: primero los nombres de los jugadores que se enfrentan, luego el resultado de cada set, y finalmente el ganador del partido. Todo eso debe imprimirse de forma ordenada y sin que se mezcle con la salida de otros hilos. ¿Cuál sería una forma eficiente de construir toda esa salida antes de imprimirla?
